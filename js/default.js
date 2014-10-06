@@ -7,6 +7,7 @@
 // JS functions and initiations go here...
 
 var playerNumberBtn = document.querySelectorAll('.js-player-number');
+var buttonsContainer = document.getElementById('players-number');
 
 for(var i = 0; i<playerNumberBtn.length; i++){
 	playerNumberBtn[i].addEventListener('click',checkPlayers,false);
@@ -46,6 +47,10 @@ function addPlayers(playersNumber){
 		listItem.classList.add('no-padding');
 		playersList.insertBefore(listItem, playersList.firstChild);	
 	}
+	playersList.parentNode.classList.add('animated');
+	playersList.parentNode.classList.add('fadeInRight');
+	buttonsContainer.classList.add('animated');
+	buttonsContainer.classList.add('fadeOutLeft');
 	
 	changeScore();
 	
