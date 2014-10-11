@@ -8,6 +8,7 @@
 
 var playerNumberBtn = document.querySelectorAll('.js-player-number');
 var buttonsContainer = document.getElementById('players-number');
+var playersList = document.querySelectorAll('.js-players-list')[0];
 
 for(var i = 0; i<playerNumberBtn.length; i++){
 	playerNumberBtn[i].addEventListener('click',checkPlayers,false);
@@ -35,7 +36,7 @@ function checkPlayers(){
 
 function addPlayers(playersNumber){ 
 
-	var playersList = document.querySelectorAll('.js-players-list')[0];
+
 	var listItem = document.createElement('li');
 		
 	// add this many players
@@ -48,6 +49,7 @@ function addPlayers(playersNumber){
 		playersList.insertBefore(listItem, playersList.firstChild);	
 	}
 	playersList.parentNode.classList.add('animated');
+	playersList.parentNode.classList.remove('fadeOutRight');
 	playersList.parentNode.classList.add('fadeInRight');
 	buttonsContainer.classList.add('animated');
 	buttonsContainer.classList.add('fadeOutLeft');
@@ -81,8 +83,22 @@ function changeScore(){
 	
 }
 
-
-
+function reset(){
+	var resetBtn = document.querySelector('.js-reset');
+	resetBtn.addEventListener('click', function(){
+		while(playersList.firstChild) {
+			playersList.removeChild(playersList.firstChild);
+		}
+	for(var i = 0; i<playerNumberBtn.length; i++){
+  			playerNumberBtn[i].removeAttribute('disabled');		
+		} 	
+	
+	playersList.parentNode.classList.add('fadeOutRight');
+	buttonsContainer.classList.remove('fadeOutLeft');
+	buttonsContainer.classList.add('fadeInLeft');
+	},false);
+}
+reset();
 /*
 function populateList(){
 	var li = document.createElement('li');
