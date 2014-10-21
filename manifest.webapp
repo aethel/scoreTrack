@@ -1,0 +1,28 @@
+{
+  "version": "0.9",
+  "name": "Score Tracker",
+  "description": "Score tracker for board games",
+  "launch_path": "/index.html",
+  "fullscreen": "true",
+  "icons": {
+    "16": "/img/icon_16.png",
+    "48": "/img/icon_48.png",
+    "60": "/img/icon_60.png",
+    "128": "/img/icon_128.png"
+  },
+  "developer": {
+    "name": "Mariusz Pankiewicz"
+  },
+  "installs_allowed_from": [
+    "https://marketplace.firefox.com"
+  ],
+  "locales": {
+    "pl": {
+      "description": "Nim - Średniowieczna gra planszowa"
+    },
+    "en": {
+      "description": "Nim Medieval Board Game"
+    }
+  },
+  "default_locale": "en"
+}

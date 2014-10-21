@@ -3,31 +3,95 @@
 // ==========================================================================
 
 // your styles go here...
+
+button {
+  border:none;
+  width:100%;
+}
+
+header {
+    padding:0.5rem;
+    text-transform:uppercase;
+    text-align:center;
+}
+
 #viewport {
   width:100%;
   position:relative;
-  transition-style:preserve-3d;
+  -webkit-transform-style:preserve-3d;
+  transform-style:preserve-3d;
+  font-family:@default-custom-family;
 }
 #players-number {
   position:absolute;
   top:0;
   width:100%;
-  background:pink;
+  background:#68BCFF;
+  
+  .js-player-number {
+    padding:1rem;
+    margin: 0.5rem 0;
+    font-weight:500;
+    font-size:2rem;
+    color:#68BCFF;
+    text-shadow:0.1rem 0.1rem darken(#68BCFF, 30%);
+    background:url('../images/pips-sprite.png') no-repeat top left #D2D2D2;
+  }
 }
 
 #score-list {
   position:absolute;
   top:0;
   width:100%;
-  background:green;
   display:none;
+  color:#fff;
   
   &.animated {
     display:block;
   }
-
+  
+  .players-list {  
+    > .row:nth-child(1) {
+      background: @red;
+    }
+    
+    > .row:nth-child(2) {
+      background: @yellow;
+    }
+    
+    > .row:nth-child(3) {
+      background: @blue;
+    }
+    
+    > .row:nth-child(4) {
+      background: @green;
+    }
+    
+    > .row:nth-child(5) {
+      background: @black;
+    }
+    
+    > .row:nth-child(6) {
+      background: @purple;
+    }
+    
+    > .row:nth-child(7) {
+      background: @orange;
+    }
+    
+    > .row:nth-child(8) {
+      background: @pink;
+    }
+  }
 }
 
-body {
-  background:red;
+
+
+
+[class$="fadeOut"] {
+  z-index:-1;
+}
+
+[class$="fadeIn"] {
+  z-index:1;
 }

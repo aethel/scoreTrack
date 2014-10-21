@@ -55,7 +55,7 @@ function addPlayers(playersNumber){
 	buttonsContainer.classList.add('fadeOutLeft');
 	
 	changeScore();
-	
+	resetScores();
 	
 }
 
@@ -99,6 +99,20 @@ function reset(){
 	},false);
 }
 reset();
+
+
+function resetScores(){
+	var scoreContainer = document.querySelectorAll('.js-score');
+	var resetScoresBtn = document.querySelector('.js-reset--all');
+	
+	resetScoresBtn.addEventListener('click', function(){
+		for(var i=0;i<scoreContainer.length;i++){
+			scoreContainer[i].textContent = "0";
+		}
+	});	
+}
+
+
 /*
 function populateList(){
 	var li = document.createElement('li');
