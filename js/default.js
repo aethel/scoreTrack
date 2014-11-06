@@ -43,7 +43,7 @@ function addPlayers(playersNumber){
 	for(var i = 0;i<playersNumber;i++){
 		console.log(i);
 		var listItem = document.createElement('li');
-		listItem.innerHTML = '<button class="col mobile-col-1-3 js-add-point">+</button><div class="col mobile-col-1-3 text-center js-score"> 0 </div><button class="col mobile-col-1-3 right js-subtract-point">-</button><div class="row text-center no-padding">colour</div>';
+		listItem.innerHTML = '<button class="col mobile-col-1-3 js-add-point">+</button><div class="col mobile-col-1-3 text-center js-score"> 0 </div><button class="col mobile-col-1-3 right js-subtract-point">-</button><div class="row text-center no-padding"></div>';
 		listItem.classList.add('row');
 		listItem.classList.add('no-padding');
 		playersList.insertBefore(listItem, playersList.firstChild);	
