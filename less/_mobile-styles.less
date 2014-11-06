@@ -1,11 +1,7 @@
-// ==========================================================================
-// Mobile Custom Styles
-// ==========================================================================
-
-// your styles go here...
+@import 'base/_variables.less';
 
 button {
-  border:none;
+  border:none; 
   width:100%;
 }
 
@@ -22,6 +18,7 @@ header {
   transform-style:preserve-3d;
   font-family:@default-custom-family;
 }
+
 #players-number {
   position:absolute;
   top:0;
@@ -29,13 +26,13 @@ header {
   background:#68BCFF;
   
   .js-player-number {
-    padding:1rem;
+    padding:0.5rem;
     margin: 0.5rem 0;
     font-weight:500;
-    font-size:2rem;
+    font-size:5rem;
     color:#68BCFF;
-    text-shadow:0.1rem 0.1rem darken(#68BCFF, 30%);
-    background:url('../images/pips-sprite.png') no-repeat top left #D2D2D2;
+    text-shadow:-0.1rem -0.1rem darken(#68BCFF, 30%);
+    background:#fff;
   }
 }
 
