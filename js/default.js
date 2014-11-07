@@ -8,7 +8,7 @@
 
 var playerNumberBtn = document.querySelectorAll('.js-player-number');
 var buttonsContainer = document.getElementById('players-number');
-var playersList = document.querySelectorAll('.js-players-list')[0];
+var playersList = document.querySelector('.js-players-list');
 
 for(var i = 0; i<playerNumberBtn.length; i++){
 	playerNumberBtn[i].addEventListener('click',checkPlayers,false);
@@ -44,14 +44,12 @@ function addPlayers(playersNumber){
 		console.log(i);
 		var listItem = document.createElement('li');
 		listItem.innerHTML = '<button class="col mobile-col-1-3 js-add-point">+</button><div class="col mobile-col-1-3 text-center js-score"> 0 </div><button class="col mobile-col-1-3 right js-subtract-point">-</button><div class="row text-center no-padding"></div>';
-		listItem.classList.add('row');
-		listItem.classList.add('no-padding');
+		listItem.classList.add('row', 'no-padding');		
 		playersList.insertBefore(listItem, playersList.firstChild);	
 	}
-	playersList.parentNode.classList.add('animated');
+	
 	playersList.parentNode.classList.remove('fadeOutRight');
-	playersList.parentNode.classList.add('fadeInRight');
-	buttonsContainer.classList.add('animated');
+	playersList.parentNode.classList.add('fadeInRight');	
 	buttonsContainer.classList.add('fadeOutLeft');
 	
 	changeScore();
@@ -86,16 +84,23 @@ function changeScore(){
 function reset(){
 	var resetBtn = document.querySelector('.js-reset');
 	resetBtn.addEventListener('click', function(){
-		while(playersList.firstChild) {
-			playersList.removeChild(playersList.firstChild);
-		}
-	for(var i = 0; i<playerNumberBtn.length; i++){
-  			playerNumberBtn[i].removeAttribute('disabled');		
-		} 	
+		playersList.parentNode.classList.add('fadeOutRight');
+		playersList.parentNode.classList.remove('fadeInRight');
+		buttonsContainer.classList.remove('fadeOutLeft');
+		buttonsContainer.classList.add('fadeInLeft');
+		
+		var hideTimeout = setTimeout(function(){
+			while(playersList.firstChild) {
+				playersList.removeChild(playersList.firstChild);
+			}
+			for(var i = 0; i<playerNumberBtn.length; i++){
+	  			playerNumberBtn[i].removeAttribute('disabled');		
+			}	
+		}, 500);
+		 	
 	
-	playersList.parentNode.classList.add('fadeOutRight');
-	buttonsContainer.classList.remove('fadeOutLeft');
-	buttonsContainer.classList.add('fadeInLeft');
+	
+	
 	},false);
 }
 reset();

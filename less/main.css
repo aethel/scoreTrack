@@ -1021,20 +1021,37 @@ header {
   padding: 0.5rem;
   margin: 0.5rem 0;
   font-weight: 500;
-  font-size: 4rem;
+  font-size: 2.5rem;
   color: #68BCFF;
   text-shadow: -0.1rem -0.1rem #0073ce;
   background: #fff;
+}
+#players-number.fadeOutLeft,
+#players-number.fadeOutRight {
+  z-index: -1;
+}
+#players-number.fadeIntLeft,
+#players-number.fadeInRight {
+  z-index: 1;
 }
 #score-list {
   position: absolute;
   top: 0;
   width: 100%;
-  display: none;
   color: #fff;
+  height: 100%;
+  background: #68BCFF;
+  z-index: 0;
+  opacity: 0;
 }
-#score-list.animated {
-  display: block;
+#score-list.fadeOutLeft,
+#score-list.fadeOutRight {
+  z-index: -1;
+}
+#score-list.fadeIntLeft,
+#score-list.fadeInRight {
+  z-index: 1;
+  opacity: 1;
 }
 #score-list .players-list .row {
   overflow: hidden;
@@ -1071,12 +1088,6 @@ header {
   line-height: 2.6rem;
   text-shadow: 0.1rem 0.1rem rgba(0, 0, 0, 0.5);
 }
-[class$="fadeOut"] {
-  z-index: -1;
-}
-[class$="fadeIn"] {
-  z-index: 1;
-}
 [class$='add-point'],
 [class$='subtract-point'] {
   color: #fff;
@@ -1108,10 +1119,11 @@ h1,
 [class*='reset'] {
   background: repeating-linear-gradient(-45deg, #b72424, #b72424 10px, #ce2121 10px, #ce2121 20px);
   border-radius: 0.5rem 0 0 0.5rem;
-  border-right: 0.25rem solid #fff;
+  border-right: 0.25rem solid #68BCFF;
 }
 [class*='reset--all'] {
   background: repeating-linear-gradient(45deg, #b72424, #b72424 10px, #ce2121 10px, #ce2121 20px);
   border-radius: 0 0.5rem 0.5rem 0;
-  border-left: 0.25rem solid #fff;
+  border-left: 0.25rem solid #68BCFF;
+  border-right: none;
 }

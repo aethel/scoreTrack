@@ -24,29 +24,53 @@ header {
   top:0;
   width:100%;
   background:#68BCFF;
-  height:100%;
-  
+  height:100%;  
+     
   .js-player-number {
     padding:0.5rem;
     margin: 0.5rem 0;
     font-weight:500;
-    font-size:4rem;
+    font-size:2.5rem;
     color:#68BCFF;
     text-shadow:-0.1rem -0.1rem darken(#68BCFF, 30%);
     background:#fff;
+  }
+  
+  &.fadeOutLeft,
+  &.fadeOutRight {
+    z-index:-1;
+  }
+ 
+  &.fadeIntLeft,
+  &.fadeInRight {
+    z-index:1;
   }
 }
 
 #score-list {
   position:absolute;
   top:0;
-  width:100%;
-  display:none;
+  width:100%;  
   color:#fff;
+  height:100%;
+  background:#68BCFF;
+  z-index:0;
+  opacity:0;
+    
   
-  &.animated {
-    display:block;
+  &.fadeOutLeft,
+  &.fadeOutRight {
+    z-index:-1;
   }
+
+  &.fadeIntLeft,
+  &.fadeInRight {
+    z-index:1;
+    opacity:1;
+    
+  }
+  
+
   
   .players-list {
     .row {
@@ -97,13 +121,8 @@ header {
 }
 
 
-[class$="fadeOut"] {
-  z-index:-1;
-}
 
-[class$="fadeIn"] {
-  z-index:1;
-}
+
 
 [class$='add-point'],
 [class$='subtract-point'] {
@@ -148,7 +167,7 @@ h1,.h1 {
   #CE2121 20px
 );
   border-radius:0.5rem 0 0 0.5rem;
-  border-right:0.25rem solid #fff;
+  border-right:0.25rem solid #68BCFF;
 }
  
 [class*='reset--all'] {
@@ -160,5 +179,6 @@ h1,.h1 {
   #CE2121 20px
 );
   border-radius:0 0.5rem 0.5rem 0;
-  border-left:0.25rem solid #fff;
+  border-left:0.25rem solid #68BCFF;
+  border-right:none;
 }
