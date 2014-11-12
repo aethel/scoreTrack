@@ -11,8 +11,7 @@ var buttonsContainer = document.getElementById('players-number');
 var playersList = document.querySelector('.js-players-list');
 
 for(var i = 0; i<playerNumberBtn.length; i++){
-	playerNumberBtn[i].addEventListener('click',checkPlayers,false);
-		
+	playerNumberBtn[i].addEventListener('click',checkPlayers,false);	
 }
 
 
@@ -52,8 +51,7 @@ function addPlayers(playersNumber){
 	playersList.parentNode.classList.add('fadeInRight');	
 	buttonsContainer.classList.add('fadeOutLeft');
 	
-	changeScore();
-	resetScores();
+	changeScore();	
 	
 }
 
@@ -84,21 +82,25 @@ function changeScore(){
 function reset(){
 	var resetBtn = document.querySelector('.js-reset');
 	resetBtn.addEventListener('click', function(){
-		playersList.parentNode.classList.add('fadeOutRight');
-		playersList.parentNode.classList.remove('fadeInRight');
-		buttonsContainer.classList.remove('fadeOutLeft');
-		buttonsContainer.classList.add('fadeInLeft');
 		
-		var hideTimeout = setTimeout(function(){
-			while(playersList.firstChild) {
-				playersList.removeChild(playersList.firstChild);
-			}
-			for(var i = 0; i<playerNumberBtn.length; i++){
-	  			playerNumberBtn[i].removeAttribute('disabled');		
-			}	
-		}, 500);
-		 	
-	
+		var yesReset = confirm('Are you certain?');
+		if(yesReset){
+			playersList.parentNode.classList.add('fadeOutRight');
+			playersList.parentNode.classList.remove('fadeInRight');
+			buttonsContainer.classList.remove('fadeOutLeft');
+			buttonsContainer.classList.add('fadeInLeft');
+			
+			var hideTimeout = setTimeout(function(){
+				while(playersList.firstChild) {
+					playersList.removeChild(playersList.firstChild);
+				}
+				for(var i = 0; i<playerNumberBtn.length; i++){
+		  			playerNumberBtn[i].removeAttribute('disabled');		
+				}	
+			}, 500);	
+		}
+		
+
 	
 	
 	},false);
@@ -109,14 +111,15 @@ reset();
 function resetScores(){
 	var scoreContainer = document.querySelectorAll('.js-score');
 	var resetScoresBtn = document.querySelector('.js-reset--all');
-	
-	resetScoresBtn.addEventListener('click', function(){
-		for(var i=0;i<scoreContainer.length;i++){
-			scoreContainer[i].textContent = "0";
-		}
-	});	
+				
+	resetScoresBtn.addEventListener('click', function(){		
+			for(var i=0;i<scoreContainer.length;i++){
+				scoreContainer[i].textContent = "0";
+			}
+		
+	},false);	
 }
-
+resetScores();
 
 /*
 function populateList(){

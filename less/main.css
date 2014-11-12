@@ -1059,6 +1059,11 @@ body {
   z-index: 1;
   opacity: 1;
 }
+#score-list .buttons-container {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
 #score-list .players-list .row {
   overflow: hidden;
   height: 3rem;
@@ -1118,7 +1123,7 @@ h1,
 [class*='reset'],
 [class*='reset--all'] {
   height: 3rem;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: bold;
   color: #fff;
 }
