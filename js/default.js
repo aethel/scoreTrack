@@ -83,7 +83,7 @@ function reset(){
 	var resetBtn = document.querySelector('.js-reset');
 	resetBtn.addEventListener('click', function(){
 		
-		var yesReset = confirm('Are you certain?');
+		var yesReset = confirm('Really restart?');
 		if(yesReset){
 			playersList.parentNode.classList.add('fadeOutRight');
 			playersList.parentNode.classList.remove('fadeInRight');
@@ -99,30 +99,26 @@ function reset(){
 				}	
 			}, 500);	
 		}
-		
 
-	
-	
 	},false);
 }
 reset();
 
 
 function resetScores(){
-	var scoreContainer = document.querySelectorAll('.js-score');
+	
 	var resetScoresBtn = document.querySelector('.js-reset--all');
-				
-	resetScoresBtn.addEventListener('click', function(){		
+			
+	
+	resetScoresBtn.addEventListener('click', function(){	
+		var scoreContainer = document.querySelectorAll('.js-score');
+		var yesResetScores = confirm('Really reset all scores?');	
+		if(yesResetScores){
 			for(var i=0;i<scoreContainer.length;i++){
 				scoreContainer[i].textContent = "0";
 			}
-		
+		}
 	},false);	
 }
 resetScores();
 
-/*
-function populateList(){
-	var li = document.createElement('li');
-}
-*/
