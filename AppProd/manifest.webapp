@@ -1,7 +1,7 @@
 {
   "version": "0.9",
   "name": "Score Tracker",
-  "description": "Keep a score of the game for several players simultaneously.",
+  "description": "Score tracker for board games",
   "launch_path": "/index.html",
   "fullscreen": "true",
   "icons": {
@@ -19,10 +19,10 @@
   "orientation" : "portrait",
   "locales": {
     "pl": {
-      "description": "Zapisuj wyniki gry dla kilku graczy jednocześnie."
+      "description": "Score tracker for board games"
     },
     "en": {
-      "description": "Keep a score of the game for several players simultaneously. "
+      "description": "Score tracker for board games"
     }
   },
   "default_locale": "en"
