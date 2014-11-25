@@ -17,8 +17,12 @@ var scoreList = {
 		
 		scoreList.playersNumberInput.addEventListener('change',function(){
 			if(parseInt(this.value) > 8) {
-				this.value = 8;
-			} else {
+				this.value = 8;				
+				scoreList.playersNumber = 8;
+			} else if(parseInt(this.value) <= 0 ) {
+				this.value = 1;				
+				scoreList.playersNumber = 1;
+			}	else {
 				scoreList.playersNumber = parseInt(this.value);			
 			}
 		},false);
