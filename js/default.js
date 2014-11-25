@@ -10,6 +10,7 @@ var scoreList = {
 		scoreList.initialValueInput.addEventListener('change',function(){
 			if(parseInt(this.value) > 999) {
 				this.value = 999;
+				scoreList.initialValue = 999;
 			} else {
 				scoreList.initialValue = parseInt(this.value);
 			}
