@@ -14,7 +14,7 @@
     "name": "Mariusz Pankiewicz"
   },
   "installs_allowed_from": [    
-    "*"
+    "https://marketplace.firefox.com"
   ],
   "orientation" : "portrait",
   "locales": {

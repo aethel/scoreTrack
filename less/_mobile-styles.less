@@ -9,6 +9,7 @@ header {
     padding:0.5rem;
     text-transform:uppercase;
     text-align:center;
+    color:#fff;      
 }
 
 html, body{
@@ -30,8 +31,62 @@ html, body{
   top:0;
   width:100%;
   background:#68BCFF;
-  height:100%;  
-     
+  height:100%;
+  padding:0.5rem 1rem;
+  
+  h1 {
+    position:relative;
+    z-index:2;
+    color:@blue;
+    
+    &:before {
+      content:'Score Tracker';      
+      color: lighten(@green, 40%);
+      position:absolute;
+      z-index:-1;
+      text-shadow:none;
+      top:-0.75rem;
+      left:-0.75rem;
+      opacity:0.55;
+    }
+    
+    &:after {
+      content:'Score Tracker';      
+      color: lighten(@yellow, 40%);
+      position:absolute;
+      z-index:-1;
+      text-shadow:none;
+      width:100%;
+      top:0.75rem;
+      left:0.75rem;
+      opacity:0.25;
+    }
+  }
+  
+  p {
+    font-size:1.5rem;
+    line-height:2.5rem;
+    text-align:justify;
+  }
+  
+  input[type="number"]{
+    background:transparent;
+    border-radius:0;
+    padding:0.1rem 0.5rem;
+    color:#fff;
+    font-size:2rem;
+    font-weight:700;
+    border:0.2rem solid #fff;
+  }
+  
+  #starting-score {
+    max-width:4.8rem;
+  }
+  
+  #players-value {
+    max-width:3.7rem;
+  }
+  
   .js-player-number {
     padding:0.5rem;
     margin: 0.5rem 0;
@@ -154,7 +209,7 @@ html, body{
 
 
 h1,.h1 {
-  font-size:1.5rem;
+  font-size:2.5rem;
   font-weight:700;
   color:#ff;
 }
