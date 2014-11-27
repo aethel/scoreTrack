@@ -1042,7 +1042,7 @@ body {
 }
 #players-number h1:after {
   content: 'Score Tracker';
-  color: #ffefac;
+  color: #fbe8d8;
   position: absolute;
   z-index: -1;
   text-shadow: none;
@@ -1064,6 +1064,7 @@ body {
   font-size: 2rem;
   font-weight: 700;
   border: 0.2rem solid #fff;
+  text-align: center;
 }
 #players-number #starting-score {
   max-width: 4.8rem;
@@ -1111,6 +1112,7 @@ body {
   position: absolute;
   width: 100%;
   bottom: 0;
+  overflow: hidden;
 }
 #score-list .players-list .row {
   overflow: hidden;
@@ -1174,15 +1176,26 @@ h1,
   font-size: 1.8rem;
   font-weight: bold;
   color: #fff;
+  box-shadow: 0 0.2rem #900b14;
+  width: 49%;
 }
 [class*='reset'] {
   background: repeating-linear-gradient(-45deg, #b72424, #b72424 10px, #ce2121 10px, #ce2121 20px);
   border-radius: 0.5rem 0 0 0.5rem;
-  border-right: 0.25rem solid #68BCFF;
+  float: left;
 }
 [class*='reset--all'] {
   background: repeating-linear-gradient(45deg, #b72424, #b72424 10px, #ce2121 10px, #ce2121 20px);
   border-radius: 0 0.5rem 0.5rem 0;
-  border-left: 0.25rem solid #68BCFF;
   border-right: none;
+  float: right;
+}
+button[class*='-start'] {
+  border-radius: 0.5rem 0.5rem;
+  border-right: medium none;
+  background: #ee974c;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: bold;
+  box-shadow: 0 0.2rem #c26412;
 }
