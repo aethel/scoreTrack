@@ -1063,7 +1063,8 @@ body {
   color: #fff;
   font-size: 2rem;
   font-weight: 700;
-  border: 0.2rem solid #fff;
+  border: none;
+  outline: 0.2rem solid #fff;
   text-align: center;
 }
 #players-number #starting-score {
