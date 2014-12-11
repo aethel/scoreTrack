@@ -44,7 +44,7 @@ var scoreList = {
 		
 			for(var i = 0;i<scoreList.playersNumber;i++){
 				var listItem = document.createElement('li');				
-				listItem.innerHTML = '<button class="col mobile-col-1-3 js-add-point">+</button><div class="col mobile-col-1-3 text-center js-score"> ' + scoreList.initialValue + ' </div><button class="col mobile-col-1-3 right js-subtract-point">-</button><div class="row text-center no-padding"></div>';
+				listItem.innerHTML = '<button class="col mobile-col-1-3 col-4 tablet-coll-4 js-add-point">+</button><div class="col col-4 mobile-col-1-3 tablet-col-4 text-center js-score"> ' + scoreList.initialValue + ' </div><button class="col col-4 mobile-col-1-3 tablet-col-4 right js-subtract-point">-</button><div class="row text-center no-padding"></div>';
 				listItem.classList.add('row', 'no-padding');		
 				scoreList.playersList.insertBefore(listItem, scoreList.playersList.firstChild);	
 			}
