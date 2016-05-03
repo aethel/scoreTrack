@@ -1,4 +1,7 @@
-# Welcome to Base
+# Score Tracker
+A small score counting app for board games. One can define how many players there are and how many points they want to start with. Then, each player get assigned a colour. Points can be added / subtracted by +1.
+
+## Welcome to Base
 A super simple, responsive framework built for all devices big, small and in-between
 
 ## Reasons to use base for your next web project
